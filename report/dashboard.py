@@ -5,13 +5,13 @@ import matplotlib.pyplot as plt
 from employee_events import QueryBase, Employee, Team
 
 # import the load_model function from the utils.py file
-from .utils import load_model
+from report.utils import load_model
 
 """
 Below, we import the parent classes
 you will use for subclassing
 """
-from base_components import (
+from report.base_components import (
     Dropdown,
     BaseComponent,
     Radio,
@@ -19,7 +19,7 @@ from base_components import (
     DataTable
     )
 
-from combined_components import FormGroup, CombinedComponent
+from report.combined_components import FormGroup, CombinedComponent
 
 
 # Create a subclass of base_components/dropdown
@@ -312,7 +312,5 @@ async def update_data(r):
         return RedirectResponse(f"/employee/{id}", status_code=303)
     elif profile_type == 'Team':
         return RedirectResponse(f"/team/{id}", status_code=303)
-    
-
 
 serve()
